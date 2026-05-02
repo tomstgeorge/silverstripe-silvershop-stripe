@@ -19,8 +19,8 @@ use SilverStripe\Omnipay\GatewayInfo;
 use SilverStripe\Omnipay\Model\Payment;
 use SilverStripe\Omnipay\Service\PurchaseService;
 use SilverStripe\ORM\FieldType\DBField;
-use SilverStripe\ORM\ValidationException;
-use SilverStripe\ORM\ValidationResult;
+use SilverStripe\Core\Validation\ValidationException;
+use SilverStripe\Core\Validation\ValidationResult;
 use SilverStripe\Security\Member;
 use SilverStripe\Security\Security;
 use SilverStripe\View\Requirements;
@@ -143,7 +143,7 @@ class StripeOnsitePayment extends OnsitePayment
         return $fields;
     }
 
-    protected function hasExistingCards(Member $member = null): bool
+    protected function hasExistingCards(?Member $member = null): bool
     {
         if (!$this->isPaymentIntent) {
             return false;

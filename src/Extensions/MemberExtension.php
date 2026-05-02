@@ -4,9 +4,9 @@ namespace Innoweb\SilvershopStripe\Extensions;
 
 use Innoweb\SilvershopStripe\Model\CreditCard;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\ORM\DataExtension;
+use SilverStripe\Core\Extension;
 
-class MemberExtension extends DataExtension
+class MemberExtension extends Extension
 {
     private static array $db = [
         'StripeCustomerReference' => 'Varchar',
